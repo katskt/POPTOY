@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual Scroll Plush Gallery</title>
+    <style>
+        .scroll-container {
+            overflow-x: auto;
+            /* Enables horizontal scrolling */
+            white-space: nowrap;
+            scroll-behavior: smooth;
+            /* Smooth scrolling */
+            width: 100%;
+            padding: 10px 0;
+            display: flex;
+            gap: 15px;
+            background-color: #f8f8f8;
+        }
+
+        .scroll-container::-webkit-scrollbar {
+            display: none;
+            /* Hide scrollbar */
+        }
+
+        .scroll-content {
+            flex: none;
+            /* Prevent wrapping */
+            width: 150px;
+            /* Adjust plush size */
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="scroll-container">
+        <img src="plush1.jpg" class="scroll-content" alt="Plush 1">
+        <img src="plush2.jpg" class="scroll-content" alt="Plush 2">
+        <img src="plush3.jpg" class="scroll-content" alt="Plush 3">
+        <img src="plush4.jpg" class="scroll-content" alt="Plush 4">
+        <img src="plush5.jpg" class="scroll-content" alt="Plush 5">
+    </div>
+    <h2> stay here</h2>
+</body>
+
+</html>
