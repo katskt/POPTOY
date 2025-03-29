@@ -89,11 +89,35 @@ nav a {
     padding: 0 10px;
 }
 
+.about__hero {
+    margin-top: 6.5rem;
+    min-height: 50vh;
+    background-color: #83DAFC;
+    display: flex;
+    flex-direction: row;
+    padding: 0 10px;
+}
+
+.second {
+    margin-top: 6.5rem;
+    min-height: 50vh;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    padding: 0 10px;
+}
+
 .text {
     padding: 3.5em;
     display: block;
     width: 50vw;
     animation: showText 1s ease-in-out forwards;
+}
+
+.about__text {
+    padding: 3.5em;
+    display: block;
+    width: 50vw;
 }
 
 @keyframes showText {
@@ -141,7 +165,20 @@ nav a {
     width: 100%;
     height: 100%;
     animation: showImage 1s ease-in-out forwards;
+}
 
+.about__img {
+    padding: 3.5em;
+    width: 50vw;
+    max-height: 60vh;
+    overflow: hidden;
+    border-radius: 30px;
+}
+
+.about__img img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
 }
 
 @keyframes showImage {
