@@ -1,49 +1,179 @@
-<!DOCTYPE html>
-<html lang="en">
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manual Scroll Plush Gallery</title>
-    <style>
-        .scroll-container {
-            overflow-x: auto;
-            /* Enables horizontal scrolling */
-            white-space: nowrap;
-            scroll-behavior: smooth;
-            /* Smooth scrolling */
-            width: 100%;
-            padding: 10px 0;
-            display: flex;
-            gap: 15px;
-            background-color: #f8f8f8;
+    /* Header */
+    .header {
+        background-color: #333;
+        color: white;
+        padding: 0.5rem 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+    }
+
+    /* Header Title Line */
+    .header-title-line {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    /* Hide default checkbox */
+    .menu-toggle {
+        display: none;
+    }
+
+    /* Menu Button */
+    .menu-button {
+        background-color: transparent;
+        border: none;
+        width: 48px;
+        height: 48px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        cursor: pointer;
+    }
+
+    /* Hamburger Icon */
+    .menu-icon,
+    .menu-icon::before,
+    .menu-icon::after {
+        background-color: white;
+        width: 40px;
+        height: 5px;
+        border-radius: 5px;
+        position: absolute;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .menu-icon::before,
+    .menu-icon::after {
+        content: "";
+    }
+
+    .menu-icon::before {
+        transform: translateY(-12px);
+    }
+
+    .menu-icon::after {
+        transform: translateY(12px);
+    }
+
+    /* Toggle Menu Open - Transform into "X" */
+    .menu-toggle:checked+.menu-button .menu-icon {
+        background-color: transparent;
+    }
+
+    .menu-toggle:checked+.menu-button .menu-icon::before {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .menu-toggle:checked+.menu-button .menu-icon::after {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    /* Navigation Menu - HIDDEN by Default */
+    .header__nav {
+        background-color: #222;
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-in-out;
+    }
+
+    /* Show menu when checkbox is checked */
+    .menu-toggle:checked~.header__nav {
+        max-height: 500px;
+        /* Adjust based on content */
+        padding: 1rem 0;
+    }
+
+    /* Navigation Links */
+    .header__ul {
+        list-style: none;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-left,
+    .nav-right {
+        padding: 1rem;
+    }
+
+    .nav-left a,
+    .nav-right a {
+        text-decoration: none;
+        color: white;
+        font-size: 1.2rem;
+        font-weight: bold;
+        display: block;
+        padding: 0.5rem;
+    }
+
+    .nav-right a:hover,
+    .nav-left a:hover {
+        background-color: #555;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+        .menu-button {
+            width: 40px;
+            height: 40px;
         }
 
-        .scroll-container::-webkit-scrollbar {
-            display: none;
-            /* Hide scrollbar */
+        .menu-icon,
+        .menu-icon::before,
+        .menu-icon::after {
+            width: 30px;
+            height: 4px;
         }
 
-        .scroll-content {
-            flex: none;
-            /* Prevent wrapping */
-            width: 150px;
-            /* Adjust plush size */
-            height: auto;
+        .menu-icon::before {
+            transform: translateY(-10px);
         }
-    </style>
-</head>
 
-<body>
+        .menu-icon::after {
+            transform: translateY(10px);
+        }
+    }
+</style>
+<header class="header">
+    <section class="header-title-line">
+        <img src="../img/234.png" width="150">
 
-    <div class="scroll-container">
-        <img src="plush1.jpg" class="scroll-content" alt="Plush 1">
-        <img src="plush2.jpg" class="scroll-content" alt="Plush 2">
-        <img src="plush3.jpg" class="scroll-content" alt="Plush 3">
-        <img src="plush4.jpg" class="scroll-content" alt="Plush 4">
-        <img src="plush5.jpg" class="scroll-content" alt="Plush 5">
-    </div>
-    <h2> stay here</h2>
-</body>
+        <!-- The Hidden Checkbox -->
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
 
-</html>
+        <!-- Label acts as the button for the checkbox -->
+        <label for="menu-toggle" class="menu-button">
+            <div class="menu-icon"></div>
+        </label>
+    </section>
+
+    <nav class="header__nav">
+        <ul class="header__ul">
+            <li class="nav-left">
+                <p><a href="tel:234234324" class="nowrap">324-234-234</a></p>
+                <p><a href="mailto:info@sd.com">info@poptoyus.com</a></p>
+            </li>
+            <li class="nav-right">
+                <a href="..">Home</a>
+                <a href="#">Contact</a>
+                <a href="../about/">About</a>
+            </li>
+        </ul>
+    </nav>
+</header>

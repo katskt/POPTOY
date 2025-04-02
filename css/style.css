@@ -75,9 +75,10 @@ nav a {
     white-space: nowrap;
 }
 
-.nav-right li:hover {
+.nav-right a:hover,
+.nav-right a:focus {
     display: block;
-    border-bottom: rgb(0, 0, 0) double 3px;
+    font-weight: 900;
 }
 
 .hero {
@@ -88,6 +89,67 @@ nav a {
     flex-direction: row;
     padding: 0 10px;
 }
+
+.hero__contact {
+    margin-top: 6.8rem;
+    min-height: 20vh;
+    background-color: #83DAFC;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.required {
+    font-size: larger;
+    color: red;
+}
+
+
+.contactForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    width: 60%;
+    padding: 4rem 0 6rem 0;
+}
+
+label {
+    font-weight: bold;
+    font-size: 1.5rem;
+    display: block;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+textarea {
+    height: 100px;
+    resize: none;
+}
+
+button {
+    width: 100%;
+    background: #83DAFC;
+    border: none;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: 0.3s;
+}
+
 
 .about__hero {
     margin-top: 6.5rem;
@@ -139,8 +201,11 @@ nav a {
 
 }
 
+
+
 .hero-h2 {
     color: #952092;
+    letter-spacing: .05em;
     display: block;
     padding-bottom: 20px;
     font-size: 2.8rem;
@@ -149,6 +214,7 @@ nav a {
 
 .bottom-h2 {
     color: #952092;
+    letter-spacing: .05em;
     display: block;
     padding: 20px;
     font-size: 2.8rem;
@@ -377,12 +443,15 @@ a:any-link {
 }
 
 .licensed-text h2 {
-    font-size: 2.5rem;
+    font-size: 2rem;
     display: block;
     padding: 40px 0px;
 
 }
 
+.LOGO img {
+    height: auto;
+}
 
 
 .contents-products {
@@ -432,6 +501,8 @@ a:any-link {
     gap: 15px;
 }
 
+
+
 .products__gallery::-webkit-scrollbar {
     display: none;
     /* Hide scrollbar */
@@ -440,7 +511,7 @@ a:any-link {
 .scroll-content {
     flex: none;
     /* Prevent wrapping */
-    width: 450px;
+    width: 420px;
     /* Adjust plush size */
     height: inherit;
 }
@@ -462,4 +533,256 @@ a:any-link {
 .products-product img:focus {
     transform: scale(1.05);
     transition: all 0.3s;
+}
+
+.bottom__nav {
+    background-color: var(--NAVCOL);
+    padding: 3rem;
+    margin-bottom: 2.5rem;
+}
+
+.bottom-ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.bottom__nav ul {
+    font-size: 1.7rem;
+    list-style: none;
+}
+
+.bottom__nav a {
+    text-decoration: none;
+
+}
+
+.title-h1 {
+    font-size: 3rem;
+    font-family: var(--TITLE);
+    color: #952092;
+}
+
+@media screen and (max-width: 576px) {
+    * {
+        font-size: 1rem;
+        /* Reduce font size for readability */
+        line-height: 160%;
+    }
+
+    body,
+    html {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+
+    }
+
+    .big {
+        font-size: 2rem;
+    }
+
+    .header {
+        position: fixed;
+    }
+
+    .header__nav {
+        height: 10vh;
+    }
+
+    .header__ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header li {
+        padding: 0;
+    }
+
+    .nav-left {
+        flex-direction: row;
+    }
+
+    .nav-left img {
+        width: 5rem;
+    }
+
+    .hero {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: inherit;
+        margin-top: 7rem;
+    }
+
+    .hero-h2 {
+        font-size: 2rem;
+    }
+
+    .hero-p {
+        font-size: 1.2rem;
+        padding: 1rem;
+    }
+
+    .img,
+    .about__img {
+        width: 100%;
+        max-height: 40vh;
+        border-radius: 15px;
+        padding-right: 1rem;
+    }
+
+
+    .products__gallery {
+        width: 100%;
+    }
+
+    .text,
+    .about__text {
+        width: 100%;
+        padding: 1rem;
+        text-align: center;
+    }
+
+    .main {
+        width: 100%;
+        position: fixed;
+        bottom: 30rem;
+        z-index: 1000;
+    }
+
+    .main-ul {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .contents-oem,
+    .contents-licensed,
+    .contents-products {
+        height: auto;
+        padding: 1rem;
+    }
+
+    .contactBear {
+        border-radius: 100px;
+    }
+
+    .contents-threeSteps {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contents-step {
+        max-height: none;
+        width: 90%;
+    }
+
+    .contents-licensed {
+        display: block;
+    }
+
+    .licensed-text {
+        text-align: center;
+        padding: 10px;
+    }
+
+
+    .scroll-content {
+        width: 320px;
+        /* Adjust plush size */
+        height: inherit;
+    }
+
+
+    .bottom__nav {
+        padding: 1rem;
+    }
+
+    .bottom-right {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .bottom-right li {
+        margin: 8px;
+    }
+
+    .bottom-ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer {
+        position: relative;
+    }
+
+    .footer-p {
+        text-align: center;
+        padding-right: 3rem;
+        animation: none;
+    }
+
+    .about__hero {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .about__text p {
+        line-height: 2.1;
+    }
+
+    .about__img {
+        width: 300px;
+    }
+
+    .hero-p {
+        padding-right: 4rem;
+    }
+
+    main {
+        margin-top: 10rem;
+    }
+
+    .hero {
+        transform: translateY(4rem);
+    }
+
+    .hero-h2 {
+        padding-right: 2rem;
+    }
+
+
+    .about__img {
+        width: 60vw;
+    }
+
+    .ourExperience {
+        background-image: url(../img/aboutBackgroundLite.png);
+
+    }
+
+    .ourExperience img {
+        display: none;
+    }
+
+    .ourExperience2 img {
+        display: none;
+    }
+
+    .ourExperience2 {
+        height: 30vh;
+        width: 80%;
+    }
+
+    .ourExperience2 {
+        background-image: url(../img/crisisCuties.jpg);
+        background-size: cover;
+        background-position: center center;
+    }
+
+    .products-product p {
+        font-size: 1.2rem;
+    }
+
 }
