@@ -715,6 +715,7 @@ a:any-link {
 
     .footer {
         position: relative;
+        z-index: 10000;
     }
 
     .footer-p {
